@@ -55,7 +55,7 @@ Este secret armazena **TODAS** as credenciais e secrets da aplicação em um ún
 ```bash
 # Buscar o valor atual
 aws secretsmanager get-secret-value \
-  --secret-id money2-backend-dev-secret-rds \
+  --secret-id devolpment-backend-dev-secret-rds \
   --region us-east-1 \
   --query 'SecretString' \
   --output text > current-secret.json
@@ -65,7 +65,7 @@ aws secretsmanager get-secret-value \
 
 # Atualizar o secret
 aws secretsmanager update-secret \
-  --secret-id money2-backend-dev-secret-rds \
+  --secret-id devolpment-backend-dev-secret-rds \
   --region us-east-1 \
   --secret-string file://current-secret.json
 
@@ -76,14 +76,14 @@ rm current-secret.json
 #### Se o secret não existe (criar do zero):
 ```bash
 aws secretsmanager create-secret \
-  --name money2-backend-dev-secret-rds \
-  --description "RDS credentials and JWT secret for My Money backend" \
+  --name devolpment-backend-dev-secret-rds \
+  --description "RDS credentials and JWT secret for My Development backend" \
   --secret-string '{
     "host": "your-rds-endpoint.us-east-1.rds.amazonaws.com",
     "username": "admin",
     "password": "your-secure-db-password",
     "port": "5432",
-    "dbname": "mymoney",
+    "dbname": "mydevelopment",
     "jwt_secret": "your-secure-jwt-token-here"
   }' \
   --region us-east-1
@@ -109,7 +109,7 @@ A instância EC2 ou role do CodeDeploy precisa desta política:
     {
       "Effect": "Allow",
       "Action": ["secretsmanager:GetSecretValue"],
-      "Resource": "arn:aws:secretsmanager:us-east-1:YOUR_ACCOUNT_ID:secret:money2-backend-dev-secret-rds-*"
+      "Resource": "arn:aws:secretsmanager:us-east-1:YOUR_ACCOUNT_ID:secret:devolpment-backend-dev-secret-rds-*"
     }
   ]
 }
@@ -126,7 +126,7 @@ aws iam put-role-policy \
     "Statement": [{
       "Effect": "Allow",
       "Action": ["secretsmanager:GetSecretValue"],
-      "Resource": "arn:aws:secretsmanager:us-east-1:*:secret:money2-backend-dev-secret-rds-*"
+      "Resource": "arn:aws:secretsmanager:us-east-1:*:secret:devolpment-backend-dev-secret-rds-*"
     }]
   }'
 ```
@@ -166,13 +166,13 @@ const config = await awsSecrets.getConfig();
 ### Opção 1: Secrets separados por ambiente
 ```bash
 # Desenvolvimento
-SECRET_NAME=money2-backend-dev-secret-rds
+SECRET_NAME=devolpment-backend-dev-secret-rds
 
 # Staging
-SECRET_NAME=money2-backend-staging-secret-rds
+SECRET_NAME=devolpment-backend-dev-secret-rds
 
 # Produção
-SECRET_NAME=money2-backend-prod-secret-rds
+SECRET_NAME=devolpment-backend-dev-secret-rds
 ```
 
 Defina `SECRET_NAME` no `ecosystem.config.js` ou como variável de ambiente do sistema.
@@ -185,13 +185,13 @@ module.exports = {
     script: './src/index.js',
     env_development: {
       NODE_ENV: 'development',
-      SECRET_NAME: 'money2-backend-dev-secret-rds',
+      SECRET_NAME: 'devolpment-backend-dev-secret-rds',
       PORT: 3001,
       AWS_REGION: 'us-east-1'
     },
     env_production: {
       NODE_ENV: 'production',
-      SECRET_NAME: 'money2-backend-prod-secret-rds',
+      SECRET_NAME: 'devolpment-backend-dev-secret-rds',
       PORT: 3001,
       AWS_REGION: 'us-east-1'
     }
@@ -239,7 +239,7 @@ curl -X POST http://localhost:3001/api/auth/login \
 ```bash
 # 1. Verificar se o secret existe e contém jwt_secret
 aws secretsmanager get-secret-value \
-  --secret-id money2-backend-dev-secret-rds \
+  --secret-id devolpment-backend-dev-secret-rds \
   --region us-east-1 \
   --query 'SecretString' \
   --output text | jq '.jwt_secret'
@@ -295,7 +295,7 @@ Se você **não quer** usar Secrets Manager para `JWT_SECRET` (apenas para dev l
 env: {
   NODE_ENV: 'aws',
   PORT: 3001,
-  SECRET_NAME: 'money2-backend-dev-secret-rds',
+  SECRET_NAME: 'devolpment-backend-dev-secret-rds',
   AWS_REGION: 'us-east-1',
   JWT_SECRET: 'your-dev-jwt-secret-here'  // ⚠️ Apenas para dev!
 }
