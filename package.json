@@ -1,5 +1,5 @@
 {
-  "name": "my-money-backend",
+  "name": "my-development-backend",
   "version": "1.0.0",
   "description": "Backend API for My Money personal finance application",
   "main": "src/index.js",
