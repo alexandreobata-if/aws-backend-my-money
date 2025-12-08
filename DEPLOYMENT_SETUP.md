@@ -76,11 +76,7 @@ rm current-secret.json
 #### Se o secret não existe (criar do zero):
 ```bash
 aws secretsmanager create-secret \
-<<<<<<< HEAD
   --name devolpment-backend-dev-secret-rds \
-=======
-  --name devolpment-backend-dev-secret-rds \
->>>>>>> 87914e893e9d8e14e822e36484979009ac26f17b
   --description "RDS credentials and JWT secret for My Development backend" \
   --secret-string '{
     "host": "your-rds-endpoint.us-east-1.rds.amazonaws.com",
