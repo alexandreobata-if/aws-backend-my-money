@@ -21,7 +21,7 @@ Variáveis de configuração **não-sensíveis** são definidas no arquivo `ecos
 ### Variáveis Sensíveis (AWS Secrets Manager)
 
 #### Secret Único Consolidado
-Nome: `money2-backend-dev-secret-rds` (ajuste conforme seu ambiente)
+Nome: `devolpment-backend-dev-secret-rds` (ajuste conforme seu ambiente)
 
 Este secret armazena **TODAS** as credenciais e secrets da aplicação em um único JSON:
 
@@ -77,7 +77,7 @@ rm current-secret.json
 ```bash
 aws secretsmanager create-secret \
 <<<<<<< HEAD
-  --name money2-backend-dev-secret-rds \
+  --name devolpment-backend-dev-secret-rds \
 =======
   --name devolpment-backend-dev-secret-rds \
 >>>>>>> 87914e893e9d8e14e822e36484979009ac26f17b

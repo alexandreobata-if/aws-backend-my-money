@@ -179,7 +179,7 @@ sudo -u appuser aws sts get-caller-identity
 ### 5. Verificar Secrets Manager como appuser
 ```bash
 sudo -u appuser aws secretsmanager get-secret-value \
-  --secret-id money2-backend-dev-secret-rds \
+  --secret-id devolpment-backend-dev-secret-rds \
   --region us-east-1 \
   --query 'SecretString' \
   --output text | jq '.jwt_secret'
