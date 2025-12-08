@@ -37,7 +37,7 @@ const awsSecrets = require('./utils/aws-secrets');
     app.use(express.json());
 
     app.get('/', (req, res) => {
-      res.send('My Money Backend API');
+      res.send('My Development Backend API');
     });
 
     // Health check route for AWS Load Balancer (no auth required)

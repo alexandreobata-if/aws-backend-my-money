@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# AWS Deployment Script for My Money Backend
+# AWS Deployment Script for My Development Backend
 # This script sets up environment and runs database migrations
 
 set -e  # Exit on error

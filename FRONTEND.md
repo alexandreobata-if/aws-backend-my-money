@@ -1,6 +1,6 @@
-# 💰 My Money Frontend - React + Tailwind CSS 3
+# 💰 My Development Frontend - React + Tailwind CSS 3
 
-Complete guide for building a modern React frontend with dark/light theme support for the My Money personal finance application.
+Complete guide for building a modern React frontend with dark/light theme support for the My Development personal finance application.
 
 ## 🚀 Project Setup
 
@@ -15,8 +15,8 @@ Complete guide for building a modern React frontend with dark/light theme suppor
 ### Initial Setup Commands
 ```bash
 # Create React app
-npx create-react-app my-money-frontend
-cd my-money-frontend
+npx create-react-app my-development-frontend
+cd my-development-frontend
 
 # Install additional dependencies
 npm install axios react-router-dom lucide-react recharts date-fns
@@ -695,4 +695,4 @@ npm install react-loading-skeleton
 npm install jspdf html2canvas
 ```
 
-This frontend will provide a complete, modern interface for the My Money backend API with professional UI/UX, comprehensive reporting, and responsive design with dark/light theme support.
+This frontend will provide a complete, modern interface for the My Development backend API with professional UI/UX, comprehensive reporting, and responsive design with dark/light theme support.

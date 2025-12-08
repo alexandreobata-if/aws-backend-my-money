@@ -16,10 +16,10 @@ permissions:
 env:
   AWS_REGION: ${{ vars.AWS_REGION }}                        # ex: us-east-1
   ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}         # ex: arn:aws:iam::123456789012:role/GitHubActionsRole
-  ARTIFACT_BUCKET: ${{ vars.ARTIFACT_BUCKET }}              # ex: my-money-artifacts
-  APP_NAME: ${{ vars.APP_NAME }}                            # ex: my-money-backend
+  ARTIFACT_BUCKET: ${{ vars.ARTIFACT_BUCKET }}              # ex: my-development-artifacts
+  APP_NAME: ${{ vars.APP_NAME }}                            # ex: my-development-backend
   CODEDEPLOY_APP: ${{ vars.CODEDEPLOY_APP }}                # ex: MyMoneyApp
-  CODEDEPLOY_GROUP: ${{ vars.CODEDEPLOY_GROUP }}            # ex: MyMoney-BlueGreen
+  CODEDEPLOY_GROUP: ${{ vars.CODEDEPLOY_GROUP }}            # ex: mydevelopment-BlueGreen
   # chave (path) do artefato no S3, já combinando app + sha
   ARTIFACT_KEY: ${{ vars.APP_NAME }}/backend-${{ github.sha }}.tgz
 

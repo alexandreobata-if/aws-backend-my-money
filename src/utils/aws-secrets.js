@@ -4,7 +4,7 @@ const path = require('path');
 class AWSSecretsManager {
   constructor() {
     this.isLocal = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'aws';
-    this.secretName = process.env.SECRET_NAME || 'my-money-backend-secrets';
+    this.secretName = process.env.SECRET_NAME || 'my-development-backend-secrets';
     this.client = null;
 
     if (!this.isLocal) {
