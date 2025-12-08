@@ -1,6 +1,6 @@
-# 🧪 Testing Strategy - My Money Backend
+# 🧪 Testing Strategy - My Development Backend
 
-Comprehensive test suite for the My Money backend API, focusing on security, financial integrity, and robustness.
+Comprehensive test suite for the My Development backend API, focusing on security, financial integrity, and robustness.
 
 ## 📋 Overview
 

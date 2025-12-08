@@ -9,7 +9,7 @@ This backend uses AWS Secrets Manager to manage database credentials securely. T
 1. **AWS RDS PostgreSQL Database** created with Secrets Manager integration
 2. **IAM permissions** to read from Secrets Manager
 3. **Environment variables** configured in AWS:
-   - `SECRET_NAME` - Name of the RDS secret (e.g., `my-money-backend-secrets`)
+   - `SECRET_NAME` - Name of the RDS secret (e.g., `my-development-backend-secrets`)
    - `AWS_REGION` - AWS region (e.g., `us-east-1`)
    - `JWT_SECRET` - JWT secret for authentication
    - `NODE_ENV=aws` or `NODE_ENV=production`
@@ -22,7 +22,7 @@ This backend uses AWS Secrets Manager to manage database credentials securely. T
 ```bash
 # Set environment variables
 export NODE_ENV=aws
-export SECRET_NAME=my-money-backend-secrets
+export SECRET_NAME=my-development-backend-secrets
 export AWS_REGION=us-east-1
 export JWT_SECRET=your-jwt-secret
 
@@ -107,7 +107,7 @@ CMD ["sh", "-c", "npm run setup-env && npx prisma migrate deploy && npx prisma g
     },
     {
       "name": "SECRET_NAME",
-      "value": "my-money-backend-secrets"
+      "value": "my-development-backend-secrets"
     },
     {
       "name": "AWS_REGION",

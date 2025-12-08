@@ -28,7 +28,7 @@ Este secret armazena **TODAS** as credenciais e secrets da aplicação em um ún
 **Estrutura do Secret:**
 ```json
 {
-  "host": "my-money-db.cluster-xyz.us-east-1.rds.amazonaws.com",
+  "host": "my-development-db.cluster-xyz.us-east-1.rds.amazonaws.com",
   "username": "admin_generated",
   "password": "auto-generated-password-123",
   "port": "5432",
@@ -77,13 +77,13 @@ rm current-secret.json
 ```bash
 aws secretsmanager create-secret \
   --name money2-backend-dev-secret-rds \
-  --description "RDS credentials and JWT secret for My Money backend" \
+  --description "RDS credentials and JWT secret for My Development backend" \
   --secret-string '{
     "host": "your-rds-endpoint.us-east-1.rds.amazonaws.com",
     "username": "admin",
     "password": "your-secure-db-password",
     "port": "5432",
-    "dbname": "mymoney",
+    "dbname": "mydevelopment",
     "jwt_secret": "your-secure-jwt-token-here"
   }' \
   --region us-east-1

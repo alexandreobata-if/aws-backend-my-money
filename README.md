@@ -1,7 +1,7 @@
 # aws-backend-my-development
 Simplify personal financial control through a complete web solution, enabling organized and visual tracking of income, expenses, and current account balances.
 
-## 📋 Step-by-Step Guide - Running the My Money Backend Application
+## 📋 Step-by-Step Guide - Running the My Development Backend Application
 
 ### 🔧 Prerequisites
 - Node.js (version 18 or higher)
@@ -10,7 +10,7 @@ Simplify personal financial control through a complete web solution, enabling or
 
 ### 📂 1. Navigate to the application directory
 ```bash
-cd aws-backend-my-money
+cd aws-backend-my-development
 ```
 
 ### 📦 2. Install dependencies
@@ -45,7 +45,7 @@ PORT=3000
 #### 5.1. Generate Prisma Client
 ```bash
 # Return to application directory
-cd aws-backend-my-money
+cd aws-backend-my-development
 npx prisma generate
 ```
 
@@ -73,7 +73,7 @@ You can test by making a GET request to:
 ```bash
 curl http://localhost:3000
 ```
-Should return: `My Money Backend API`
+Should return: `My Development Backend API`
 
 ### 🔍 8. Available endpoints
 - `POST /api/auth/register` - Register user
