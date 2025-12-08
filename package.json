@@ -1,7 +1,11 @@
 {
   "name": "my-development-backend",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Backend API for My Development personal finance application",
+=======
+  "description": "Backend API for My Development personal application",
+>>>>>>> 87914e893e9d8e14e822e36484979009ac26f17b
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
