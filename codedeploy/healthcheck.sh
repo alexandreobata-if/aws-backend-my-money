@@ -2,7 +2,7 @@
 set -e
 
 # Configurações
-APP_PORT=${PORT:-3000}
+APP_PORT=${PORT:-3001}
 APP_NAME="meu-backend"
 MAX_RETRIES=30
 RETRY_DELAY=2
