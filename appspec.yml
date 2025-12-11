@@ -13,7 +13,7 @@ permissions:
     type:
       - directory
       - file
-
+# 
 hooks:
   ApplicationStop:
     - location: codedeploy/application_stop.sh
